@@ -1,0 +1,9 @@
+<input [(ngModel)]="newTaskName" placeholder="Nom de la tâche" />
+<button (click)="addTask()">Ajouter</button>
+
+<ul>
+  <li *ngFor="let task of tasks$ | async">
+    {{ task.name }}
+    <button (click)="deleteTask(task.id)">Delete</button>
+  </li>
+</ul>
